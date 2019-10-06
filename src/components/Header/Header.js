@@ -100,6 +100,10 @@ const Header = props => {
     handleMobileMenuClose();
   };
 
+  const filterImages = e => {
+    props.handleFilter(e.target.value)
+  }
+
   const handleMobileMenuOpen = event => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
@@ -186,6 +190,7 @@ const Header = props => {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
+              onChange={e => filterImages(e)}
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
